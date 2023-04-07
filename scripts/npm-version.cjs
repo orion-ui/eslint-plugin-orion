@@ -8,7 +8,7 @@ function findNextVersion () {
 	if (!branch.length) throw `Missing branch name`;
 
 	https.get(
-		`https://registry.npmjs.org/@orion.ui/orion`,
+		`https://registry.npmjs.org/@orion.ui/eslint-plugin-orion`,
 		{},
 		(resp) => {
 			let data = '';
