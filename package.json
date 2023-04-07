@@ -1,0 +1,22 @@
+{
+  "name": "@orion.ui/eslint-plugin",
+  "version": "0.1.0-alpha.4",
+  "description": "An ESLint plugin to use with eslint-config-orion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orion-ui/eslint-plugin-orion.git"
+  },
+  "author": "Orion UI <dev@orion-ui.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orion-ui/eslint-plugin-orion/issues"
+  },
+  "homepage": "https://github.com/orion-ui/eslint-plugin-orion#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11"
+  }
+}
