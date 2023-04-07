@@ -1,0 +1,32 @@
+name: Build & Publish for pre-release
+
+on:
+  push:
+    branches:
+      - develop
+      - "feature/**"
+      - "hotfix/**"
+      - "release/**"
+      - "!main"
+
+jobs:
+  build-publish-prerelease:
+    name: Build Develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - name: Bump version
+        run: npm version "$(BRANCH=${GITHUB_REF_NAME} node scripts/npm-version.cjs)" --no-git-tag-version
+
+      - name: Publish to NPM for pre-release
+        run: npm publish --tag "$(BRANCH=${GITHUB_REF_NAME} node scripts/npm-sanitize-tag.cjs)" --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -5,6 +5,7 @@ const AsyncSuffix = require("./src/async-suffix");
 
 module.exports = {
   name: package.name,
+  // @ts-ignore
   version: package.version,
   rules: {
     "async-await": AsyncAwait,
@@ -12,7 +13,7 @@ module.exports = {
   },
   configs: {
     recommended: {
-      plugins: ["@orion.ui/eslint-plugin"],
+      plugins: ["@orion.ui/eslint-plugin-orion"],
 
       overrides: [
         {
@@ -24,8 +25,8 @@ module.exports = {
       ],
 
       rules: {
-        "@orion.ui/async-suffix": "error",
-        "@orion.ui/async-await": "off",
+        "@orion.ui/orion/async-suffix": "error",
+        "@orion.ui/orion/async-await": "off",
         "@typescript-eslint/no-unused-vars": "warn",
         "array-element-newline": ["error", "consistent"],
         "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],

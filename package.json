@@ -1,6 +1,5 @@
 {
-  "name": "@orion.ui/eslint-plugin",
-  "version": "0.1.0-alpha.4",
+  "name": "@orion.ui/eslint-plugin-orion",
   "description": "An ESLint plugin to use with eslint-config-orion",
   "main": "index.js",
   "scripts": {
